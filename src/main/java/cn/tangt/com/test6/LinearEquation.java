@@ -5,17 +5,17 @@ import java.util.Scanner;
 /**
  * @author : tgt
  * @version : 1.0
- * @class : LinearEquatino
- * @description : LinearEquatino
+ * @class : LinearEquation
+ * @description : LinearEquation
  * @date : 2022/4/8
  */
 public class LinearEquation {
-    private double a;
-    private double b;
-    private double c;
-    private double d;
-    private double e;
-    private double f;
+    private final double a;
+    private final double b;
+    private final double c;
+    private final double d;
+    private final double e;
+    private final double f;
 
     public LinearEquation(double a, double b, double c, double d, double e, double f) {
         this.a = a;
@@ -75,7 +75,7 @@ class TestLinearEquation {
         double y3 = s.nextDouble();
         double x4 = s.nextDouble();
         double y4 = s.nextDouble();
-        LinearEquation linearEquation = new LinearEquation(y1 - y2, -(x1 - x2), y3 - y4, -(x3 - x4), (y1 - y2) * x1 - (x1 - x2) * y1, (y3 - y4) * x3 - (x3 - x4) * y4);
+        LinearEquation linearEquation = new LinearEquation(y1 - y2, -(x1 - x2), y3 - y4, -(x3 - x4), (y1 - y2) * x1 - (x1 - x2) * y1, (y3 - y4) * x3 - (x3 - x4) * y3);
         if (linearEquation.isSolvable()) {
             System.out.println("The intersecting point is: (" +
                     linearEquation.getX() +
