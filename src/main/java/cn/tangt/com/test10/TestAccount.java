@@ -40,7 +40,7 @@ public class TestAccount {
         System.out.println("Date AccountID Type Amount Balance");
         for (int j = 0; j < account.k; j++) {
             if (account.transactions[j] != null) {
-                System.out.println(account.transactions[j].tradeTime + " " + account.transactions[j].accountid + " " + account.transactions[j].tradeType + " " + account.transactions[j].tradeAmount + " " + account.transactions[j].balance);
+                System.out.println(account.transactions[j].tradeTime + " " + account.transactions[j].accountId + " " + account.transactions[j].tradeType + " " + account.transactions[j].tradeAmount + " " + account.transactions[j].balance);
             } else {
                 System.out.println("余额不⾜，⽆法取款");
             }
@@ -81,7 +81,7 @@ class SavingsAccount extends Account {
 
     public void deposit(double number) {
         Balance += number;
-        transactions[k].accountid = this.id;
+        transactions[k].accountId = this.id;
         transactions[k].tradeTime = new Date();
         transactions[k].tradeType = 'D';
         transactions[k].balance = this.Balance;
@@ -92,7 +92,7 @@ class SavingsAccount extends Account {
     public void withdraw(double number) {
         if (Balance - number >= 0) {
             Balance -= number;
-            transactions[k].accountid = this.id;
+            transactions[k].accountId = this.id;
             transactions[k].tradeTime = new Date();
             transactions[k].tradeType = 'W';
             transactions[k].balance = this.Balance;
@@ -130,7 +130,7 @@ class CheckingAccount extends Account {
 
     public void deposit(double number) {
         Balance += number;
-        transactions[k].accountid = this.id;
+        transactions[k].accountId = this.id;
         transactions[k].tradeTime = new Date();
         transactions[k].tradeType = 'D';
         transactions[k].balance = this.Balance;
@@ -142,7 +142,7 @@ class CheckingAccount extends Account {
         if (creditAmount - number > 0) {
             Balance -= number;
             creditAmount -= number;
-            transactions[k].accountid = this.id;
+            transactions[k].accountId = this.id;
             transactions[k].tradeTime = new Date();
             transactions[k].tradeType = 'W';
             transactions[k].balance = this.Balance;
@@ -167,7 +167,7 @@ class CheckingAccount extends Account {
 }
 
 class Transaction {
-    public int accountid;
+    public int accountId;
     public Date tradeTime;
     public char tradeType;
     public double tradeAmount;
